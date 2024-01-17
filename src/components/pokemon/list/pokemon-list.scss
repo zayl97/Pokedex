@@ -1,0 +1,215 @@
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        font-family: 'Courier New', monospace;
+        color: #fff;
+        font-size: 42px;
+        letter-spacing: 8px;
+    }
+    
+    .search-bar {
+        width: 600px;
+        height: 30px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 15px;
+        border: 0;
+        box-shadow: 4px 3px 7px -2px #333;
+
+        &:hover {
+            background-color: #ddd;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+    }
+
+    .search-btn {
+        width: 100px;
+        height: 35px;
+        border-radius: 10px;
+        background-color: #3677ff;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 0;
+        box-shadow: 4px 3px 7px -2px #333;
+
+        &:hover {
+            background-color: #295fd1;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+    }
+}
+
+.pokemon-list {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        overflow-y: auto;
+        scroll-behavior: auto;
+        max-height: 70vh;
+
+        li {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+            width: 15%;
+            background-color: #fefefe;
+
+            &:hover {
+                background-color: #ccc;
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+            }
+
+            .pokemon-card_image-container {
+                display: flex;
+                justify-content: center;
+            }
+
+            .pokemon-card_name-container {
+                align-items: center;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .pokemon-card_element-container {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+span {
+    padding: 5px 10px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 3px #aaa;
+    color: #fff;
+    
+    &.grass {
+        background-color: rgb(0, 125, 0);
+    }
+
+    &.poison {
+        background-color: rgb(117, 195, 0);
+    }
+
+    &.fire {
+        background-color: rgb(212, 7, 7);
+    }
+
+    &.water {
+        background-color: rgb(57, 57, 250);
+    }
+
+    &.flying {
+        background-color: lightgray;
+    }
+
+    &.bug {
+        background-color: orange;
+    }
+
+    &.normal {
+        color: #222;
+        background-color: white;
+    }
+
+    &.electric {
+        background-color: yellow;
+    }
+
+    &.ground {
+        background-color: sandybrown;
+    }
+
+    &.fairy {
+        background-color: pink;
+    }
+
+    &.fighting {
+        background-color: rgb(168, 168, 168);
+    }
+
+    &.rock {
+        background-color: slategray;
+    }
+
+    &.ice {
+        background-color: aqua;
+    }
+
+    &.ghost {
+        background-color: purple;
+    }
+
+    &.psychic {
+        background-color: blueviolet;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .search-bar {
+            width: 90%;
+        }
+    }
+
+    .pokemon-list {
+        ul {
+            align-items: center;
+    
+            li {
+                width: 90%;
+
+                .pokemon-card_element-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 768px) {
+    .header-container {
+        .search-bar {
+            width: 80%;
+        }
+    }
+
+    .pokemon-list {
+        ul {
+            li {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .pokemon-list {
+        ul {
+            li {
+                width: 25%;
+            }
+        }
+    }
+}

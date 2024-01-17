@@ -1,0 +1,37 @@
+.animate-fade-in.au-enter {
+    opacity: 0;
+}
+
+.animate-fade-in.au-enter-active {
+    animation: FadeIn 0.3s;
+}
+
+@keyframes FadeIn {
+0% {
+    opacity: 0;
+}
+
+100% {
+    opacity: 1;
+}
+}
+
+.animate-fade-out.au-leave-active {
+    animation: FadeOut 0.3s;
+}
+
+@keyframes FadeOut {
+0% {
+    opacity: 1;
+}
+
+100% {
+    opacity: 0;
+}
+}
+
+.au-stagger {
+    -webkit-animation-delay: 1000ms;
+    animation-delay: 1000ms;
+}
+  

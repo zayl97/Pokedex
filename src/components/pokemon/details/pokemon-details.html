@@ -1,0 +1,46 @@
+<template>
+  <div
+    if.bind="pokemonDetails"
+    class="pokemon-details-container au-animate animate-fade-in animate-fade-out"
+  >
+    <div class="header-container">
+      <button click.delegate="goBack()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <h2 class="header">${pokemonDetails.name}</h2>
+      <p class="spacer">&nbsp;</p>
+    </div>
+    <div class="pokemon-info-container">
+      <div class="pokemon-image-container">
+        <img
+          src.bind="pokemonDetails.sprites.front_default"
+          alt.bind="pokemonDetails.name"
+        />
+      </div>
+      <div class="pokemon-stats-container">
+        <p><strong>Id:</strong> ${pokemonDetails.id}</p>
+        <p>
+          <strong>Base experience:</strong> ${pokemonDetails.base_experience}
+        </p>
+        <p><strong>HP:</strong> ${pokemonDetails.stats[0].base_stat}</p>
+        <p><strong>Attack:</strong> ${pokemonDetails.stats[1].base_stat}</p>
+        <p><strong>Defense:</strong> ${pokemonDetails.stats[2].base_stat}</p>
+        <p>
+          <strong>Special attack:</strong> ${pokemonDetails.stats[3].base_stat}
+        </p>
+        <p>
+          <strong>Special defense:</strong> ${pokemonDetails.stats[4].base_stat}
+        </p>
+        <p><strong>Speed:</strong> ${pokemonDetails.stats[5].base_stat}</p>
+        <p>
+          <strong>Type:</strong>
+          <span
+            repeat.for="pokemonElement of pokemonDetails.types"
+            class="${pokemonElement.type.name}"
+            >${pokemonElement.type.name}</span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,68 @@
+{
+  "name": "pokedex",
+  "type": "project:application",
+  "paths": {
+    "root": "src",
+    "resources": "resources",
+    "elements": "resources/elements",
+    "attributes": "resources/attributes",
+    "valueConverters": "resources/value-converters",
+    "bindingBehaviors": "resources/binding-behaviors"
+  },
+  "transpiler": {
+    "id": "typescript",
+    "fileExtension": ".ts"
+  },
+  "build": {
+    "options": {
+      "server": "dev",
+      "extractCss": "prod",
+      "coverage": false
+    },
+    "bundles": [
+      {
+        "name": "app-bundle.js",
+        "source": [
+          "src/**/*.ts"
+        ]
+      },
+      {
+        "name": "vendor-bundle.js",
+        "prepend": [
+          "node_modules/bluebird/js/browser/bluebird.core.js",
+          "node_modules/regenerator-runtime/runtime.js",
+          "node_modules/aurelia-bootstrapper/dist/commonjs/aurelia-bootstrapper.js",
+          "node_modules/aurelia-pal-browser/dist/commonjs/pal.js",
+          "node_modules/aurelia-pal-browser/dist/commonjs/pal-browser.js",
+          "node_modules/aurelia-pal/dist/commonjs/pal.js",
+          "node_modules/aurelia-pal/dist/commonjs/pal.js"
+        ],
+        "dependencies": [
+          "aurelia-bootstrapper",
+          "bootstrap",
+          "fontawesome"
+        ]
+      }
+    ]
+  },
+  "platform": {
+    "hmr": false,
+    "open": false,
+    "port": 8080,
+    "host": "localhost",
+    "output": "dist"
+  },
+  "sass": {
+    "source": "src/styles/**/*.scss",
+    "output": "dist/styles/",
+    "options": {
+      "outputStyle": "compressed"
+    }
+  },
+  "plugins": [
+    {
+      "name": "sass",
+      "extensions": [".scss"]
+    }
+  ]
+}

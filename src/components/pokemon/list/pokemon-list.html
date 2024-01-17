@@ -1,0 +1,43 @@
+<template>
+  <div class="au-animate animate-fade-in animate-fade-out">
+    <div class="header-container">
+      <h1 class="header">Pokedex</h1>
+      <input
+        class="search-bar"
+        type="text"
+        id="pokemonName"
+        value.bind="pokemonName"
+        input.delegate="searchPokemon()"
+        placeholder="Type name or element of the pokemon"
+      />
+      <button class="search-btn" click.delegate="searchPokemon()">
+        Search
+      </button>
+    </div>
+
+    <div class="pokemon-list" if.bind="filteredPokemonList.length > 0">
+      <ul>
+        <li
+          repeat.for="pokemon of filteredPokemonList"
+          click.delegate="selectPokemon(pokemon.name)"
+        >
+          <div class="pokemon-list_card">
+            <div class="pokemon-card_image-container">
+              <img alt="${pokemon.name}" src="${pokemon.image}" />
+            </div>
+            <div class="pokemon-card_name-container">
+              <h3>${pokemon.name}</h3>
+            </div>
+            <div class="pokemon-card_element-container">
+              <span
+                repeat.for="pokemonElement of pokemon.elements"
+                class="${pokemonElement}"
+                >${pokemonElement}</span
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
